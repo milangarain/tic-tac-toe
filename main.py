@@ -153,6 +153,4 @@ def play_game():
 
 
 #       ************   Calling Game       ********************
-#print("Player (current_player+1),"(%d)dis winner",players[current_player]
-display_board2()
-#play_game()
+play_game()
