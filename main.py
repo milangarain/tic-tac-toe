@@ -8,9 +8,7 @@
 board = ['-','-','-',
          '-','-','-',
          '-','-','-']
-board2 = ['.','.','.',
-         '.','.','.',
-         '.','.','.']
+
 #  Player 1 is 'X'  and Player 2 is 'O'
 players = ['X','O']
 
@@ -33,10 +31,6 @@ def display_board():
     print("  ",board[6]," | ",board[7]," | ",board[8],"       7 | 8 | 9")
     #print(""--------------------      -------------")
     print('\n\n')
-def display_board2():
-    print("    Actual Game       Reference Position")
-    print("  _________      _________")
-    print("  | ",board2[0]," | ",board2[1]," | ",board2[2]," |      1 | 2 | 3")
 
 #        **************   Taking position and validating   *********
 #function to take a valid position
