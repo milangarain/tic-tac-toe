@@ -5,9 +5,9 @@
 
 #Making a game of Tic Tac Toe
 #Take one Board as below
-board = ['-','-','-',
-         '-','-','-',
-         '-','-','-']
+board = ['.','.','.',
+         '.','.','.',
+         '.','.','.']
 
 #  Player 1 is 'X'  and Player 2 is 'O'
 players = ['X','O']
@@ -22,15 +22,16 @@ winner = None
 
 #           ************   Displaying Board    ******************
 def display_board():
-    print("    Actual Game       Reference Position")
-    print("  ---------------     ------------------\n",end="")
-    print("  ",board[0]," | ",board[1]," | ",board[2],"       1 | 2 | 3")
-    print("  ---------------      -----------")
-    print("  ",board[3]," | ",board[4]," | ",board[5],"       4 | 5 | 6")
-    print("  ---------------      -----------")
-    print("  ",board[6]," | ",board[7]," | ",board[8],"       7 | 8 | 9")
-    #print(""--------------------      -------------")
-    print('\n\n')
+    print()
+    print("    Actual Game          Reference Position")
+    print("  _____________          _____________")
+    print("  | {} | {} | {} |          | 1 | 2 | 3 |".format(board[0],board[1],board[2]))
+    print("  |___|___|___|          |___|___|___|")
+    print("  | {} | {} | {} |          | 4 | 5 | 6 |".format(board[3],board[4],board[5]))
+    print("  |___|___|___|          |___|___|___|")
+    print("  | {} | {} | {} |          | 7 | 8 | 9 |".format(board[6],board[7],board[8]))
+    print("  |___|___|___|          |___|___|___|")
+    print("\n")
 
 #        **************   Taking position and validating   *********
 #function to take a valid position
@@ -46,7 +47,7 @@ def take_position():
             pos = int(position)-1           #Making absolute position(0 index)
             if(pos<0 or pos>8):
                 print("Player",current_player+1,"Please enter a valid position (in range[1-9])",end="  ")
-            elif(board[pos]!='-'):
+            elif(board[pos]!='.'):
                 print("Player",current_player+1,"Please enter an empty position",end="  ")
             else:
                 return pos
@@ -59,16 +60,16 @@ def take_position():
 #if any position is empty then it's not tied
 def is_game_tied():
     for i in range(9):
-        if(board[i] == '-'):
+        if(board[i] == '.'):
             return False
     return True
 
 #Checking row for winner
 def check_row():
     #row1 = board[0]==board[1]==board[2] != '-' ...
-    if((board[0]==board[1]==board[2] != '-')
-    or (board[3]==board[4]==board[5] != '-')
-    or (board[6]==board[7]==board[8] != '-')):
+    if((board[0]==board[1]==board[2] != '.')
+    or (board[3]==board[4]==board[5] != '.')
+    or (board[6]==board[7]==board[8] != '.')):
         return True
     return False
 
@@ -76,9 +77,9 @@ def check_row():
 def check_column():
     #we can break like
     #col1 = board[0]==board[3]==board[6] != '-' and so on
-    if((board[0]==board[3]==board[6] != '-')
-    or (board[1]==board[4]==board[7] != '-')
-    or (board[2]==board[5]==board[8] != '-')):
+    if((board[0]==board[3]==board[6] != '.')
+    or (board[1]==board[4]==board[7] != '.')
+    or (board[2]==board[5]==board[8] != '.')):
         return True
     return False
 
@@ -86,8 +87,8 @@ def check_column():
 def check_diagonal():
     #we can break like
     #diag1 = board[0]==board[4]==board[8] != '-' and so on
-    if((board[0]==board[4]==board[8] != '-')
-    or (board[2]==board[4]==board[6] != '-')):
+    if((board[0]==board[4]==board[8] != '.')
+    or (board[2]==board[4]==board[6] != '.')):
         return True
     return False
 
